@@ -203,7 +203,7 @@ GO
 
 
 
-create procedure [dbo].[SaveCacheItem] @uid uniqueidentifier, @body varchar(7950), @expiration datetime2
+create procedure [dbo].[SaveCacheItem] @uid uniqueidentifier, @body nvarchar(3950), @expiration datetime2
 WITH
     NATIVE_COMPILATION, 
     SCHEMABINDING, 
@@ -252,7 +252,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-create procedure [dbo].[SaveCacheItem2] @uid uniqueidentifier, @body varchar(7950), @expiration datetime2
+create procedure [dbo].[SaveCacheItem2] @uid uniqueidentifier, @body nvarchar(3950), @expiration datetime2
 AS
 BEGIN    
    delete [dbo].[ObjectCache2] where ObjectKey = @uid;
